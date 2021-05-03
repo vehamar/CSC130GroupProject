@@ -1,5 +1,5 @@
 """Sub Class Chips creates all of the chips objects"""
-from Stock import Stock
+from Stock_Edited import Stock
 
 class Chips(Stock):
 
