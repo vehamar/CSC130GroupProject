@@ -1,5 +1,5 @@
 """Sub Class Beverage creates all of the Beverage objects"""
-from Stock import Stock
+from Stock_Edited import Stock
 
 class Beverage(Stock):
 
