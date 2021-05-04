@@ -9,30 +9,31 @@ class HotDogStand(LinkedQueue):
         LinkedQueue.__init__(self, sourceCollection)
 
     def displayActions(self):
-        print("What would you like to do?")
-        print("1. Take order")
-        print("2. Display current order")
-        print("3. Take payment")
-        print("4. Serve order")
-        print("5. Display all menu items")
-        print("6. Exit")
-        choice = int(input("Please enter a number from the menu above:"))
+        try:
+            print("What would you like to do?")
+            print("1. Take order")
+            print("2. Display current order")
+            print("3. Take payment")
+            print("4. Serve order")
+            print("5. Display all menu items")
+            print("6. Exit")
+            choice = int(input("Please enter a number from the menu above:"))
 
-        if choice == 1:
-            self.takeOrder()
-        elif choice == 2:
-            self.displayCurrentOrder()
-        elif choice == 3:
-            self.takePayment()
-        elif choice == 4:
-            self.serve()
-        elif choice == 5:
-            self.displayMenuItems()
-        elif choice == 6:
-            exit()
-        else:
+            if choice == 1:
+                self.takeOrder()
+            elif choice == 2:
+                self.displayCurrentOrder()
+            elif choice == 3:
+                self.takePayment()
+            elif choice == 4:
+                self.serve()
+            elif choice == 5:
+                self.displayMenuItems()
+            elif choice == 6:
+                exit()
+        except:
             print("Invalid input, please select a number from the menu")
-            self.displayActions()
+            self.goBackToMainMenu()
 
     def takeOrder(self):
         # orderList will store Hotdog/Beverage/Chips object
