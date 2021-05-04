@@ -36,17 +36,8 @@ class HotDogStand(LinkedQueue):
             self.goBackToMainMenu()
 
     def takeOrder(self):
-        # orderList will store Hotdog/Beverage/Chips object
-        # info in their respective lists, which will
-        # become a Node representing an order that will be pushed onto
-        # the linked queue. For example, an order in orderList will look like:
-        #[['hotdog', 'qty: 2', 6.0],
-        #   ['beverage', 'qty: 2', 1.0],['chips','qty:1', 1.0]]
-        # index 2 is the price
         orderList = []
-
-        # call separate methods for taking hotdog, bevs, & chip orders,
-        # starting with taking orders for hotdogs, then add each to orderList
+        
         hotdogOrder = self.takeHotDogOrder()
         orderList.append(hotdogOrder)
         drinkOrder = self.takeBeverageOrder()
@@ -68,7 +59,6 @@ class HotDogStand(LinkedQueue):
         elif wantAHotdog != 'Y' and wantAHotdog !='y' and \
                 wantAHotdog !='N' and wantAHotdog !='n':
             print("Invalid input, enter 'Y' for yes or 'N' for no\n")
-            #self.takeHotDogOrder()
             wantAHotdog = input("Order a hotdog? Enter Y for yes or N for no")
             if wantAHotdog == 'Y' or wantAHotdog == 'y':
                 hotdogQty = input("How many hotdogs would you like? ")
