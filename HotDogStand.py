@@ -61,14 +61,19 @@ class HotDogStand(LinkedQueue):
         if wantAHotdog == 'Y' or wantAHotdog =='y':
             hotdogQty = input("How many hotdogs would you like? ")
             hotdogs = HotDog(hotdogQty)
-            hotdogList = ["hotdog", "qty: " + str(hotdogs.quantity),
-                          hotdogs.price]
+            hotdogList = ["hotdog", "qty: " + str(hotdogs.quantity), hotdogs.price]
             return hotdogList
 
         elif wantAHotdog != 'Y' and wantAHotdog !='y' and \
                 wantAHotdog !='N' and wantAHotdog !='n':
             print("Invalid input, enter 'Y' for yes or 'N' for no\n")
-            self.takeHotDogOrder()
+            #self.takeHotDogOrder()
+            wantAHotdog = input("Order a hotdog? Enter Y for yes or N for no")
+            if wantAHotdog == 'Y' or wantAHotdog == 'y':
+                hotdogQty = input("How many hotdogs would you like? ")
+                hotdogs = HotDog(hotdogQty)
+                hotdogList = ["hotdog", "qty: " + str(hotdogs.quantity), hotdogs.price]
+                return hotdogList
 
         elif wantAHotdog == 'N' or wantAHotdog == 'n':
             hotdogList = ["hotdog", "qty: 0", 0.0]
@@ -86,7 +91,13 @@ class HotDogStand(LinkedQueue):
         elif wantADrink != 'Y' and wantADrink != 'y' and \
                 wantADrink != 'N' and wantADrink != 'n':
             print("Invalid input, enter 'Y' for yes or 'N' for no")
-            self.takeBeverageOrder()
+            wantADrink = input("Want a drink? Enter Y for yes or N for no")
+            if wantADrink == 'Y' or wantADrink == 'y':
+                drinkQty = input("How many drinks would you like? ")
+                drinks = Beverage(drinkQty)
+                drinkList = ["beverage", "qty: " + str(drinks.quantity),
+                             drinks.price]
+                return drinkList
             
         elif wantADrink == 'N' or wantADrink == 'n':
             drinkList = ["beverage", "qty: 0", 0.0]
@@ -97,14 +108,20 @@ class HotDogStand(LinkedQueue):
         if wantChips == 'Y' or wantChips == 'y':
             chipQty = input("How many bags of chips would you like? ")
             chips = Chips(chipQty)
-            chipsList = ["chips", "chips qty:" + str(chips.quantity),
+            chipsList = ["chips", "qty:" + str(chips.quantity),
                           chips.price]
             return chipsList
             
         elif wantChips != 'Y' and wantChips != 'y' and \
                 wantChips != 'N' and wantChips != 'n':
             print("Invalid input, enter 'Y' for yes or 'N' for no")
-            self.takeChipsOrder()
+            wantChips = input("Want some chips? Enter Y for yes or N for no")
+            if wantChips == 'Y' or wantChips == 'y':
+                chipQty = input("How many bags of chips would you like? ")
+                chips = Chips(chipQty)
+                chipsList = ["chips", "qty:" + str(chips.quantity),
+                             chips.price]
+                return chipsList
 
         elif wantChips == 'N' or wantChips == 'n':
             chipsList = ["chips", "qty: 0", 0.0]
