@@ -1,4 +1,3 @@
-import os
 from node import Node
 from linkedqueue import LinkedQueue
 from HotDog_Edited import HotDog
@@ -31,7 +30,7 @@ class HotDogStand(LinkedQueue):
             elif choice == 5:
                 self.displayMenuItems()
             elif choice == 6:
-                os._exit(1)
+                exit()
         except:
             print("Invalid input, please select a number from the menu")
             self.goBackToMainMenu()
