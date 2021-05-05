@@ -30,7 +30,7 @@ class HotDogStand(LinkedQueue):
             elif choice == 5:
                 self.displayMenuItems()
             elif choice == 6:
-                exit()
+                print("Bye")
         except:
             print("Invalid input, please select a number from the menu")
             self.goBackToMainMenu()
