@@ -166,7 +166,7 @@ class HotDogStand(LinkedQueue):
         if choice == 'Y' or choice == 'y':
             self.displayActions()
         elif choice == 'N' or choice == 'n':
-            exit()
+            print("Bye")
         else:
             print("Invalid input, enter 'Y' for yes or 'N' for no")
             self.goBackToMainMenu()
